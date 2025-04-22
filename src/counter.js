@@ -49,36 +49,113 @@ export function setupCounter() {
   // console.log(freqK([2, 4, 4, 3, 3, 7, 7, 7, 8], 2));
   //
   // Problem4
+  // function formSmallest(num) {
+  //   const freq = new Array(10).fill(0);
 
-  function formSmallest(num) {
-    let freq = new Array(10).fill(0);
-    let result = 0;
+  //   let result = 0;
+  //   while (num > 0) {
+  //     let d = parseInt(num % 10);
+  //     freq[d]++;
+  //     num = parseInt(num / 10);
+  //   }
 
-    while (num > 0) {
-      let d = parseInt(num % 10);
-      freq[d]++;
-      num = parseInt(num / 10);
-    }
+  //   for (let i = 1; i <= 9; i++) {
+  //     if (freq[i] != 0) {
+  //       result = i;
+  //       freq[i]--;
+  //       break;
+  //     }
+  //   }
 
-    // First digit (non-zero) to avoid leading zero
-    for (let i = 1; i <= 9; i++) {
-      if (freq[i] !== 0) {
-        result = i;
-        freq[i]--;
-        break;
-      }
-    }
+  //   for (let i = 0; i <= 9; i++) {
+  //     while (freq[i] != 0) {
+  //       result = result * 10 + i;
+  //       freq[i]--;
+  //     }
+  //   }
+  //   return result;
+  // }
+  // console.log(formSmallest('762021'));
+ // Problem 5
+ //
+//  function sortbasedFreq(str) {
+//   let frequency = str.split('').reduce((a,b) => {
+//     a[b] ? a[b]++ : a[b]=1;
+//     return a;
+//   },{});
 
-    // Append remaining digits in ascending order
-    for (let i = 0; i <= 9; i++) {
-      while (freq[i] !== 0) {
-        result = result * 10 + i;
-        freq[i]--;
-      }
-    }
-    console.log(result);
-    return result;
-  }
+//   const sortedFreq = Object.entries(frequency).sort((a,b) => {
+//     if(b[1] != a[1]) {
+//       return b[1] - a[1];
+//     }
+//     return a[0].localeCompare(b[0])
+//   });
+    
+//   let result = '';
+//   for(let [char,freq] of sortedFreq) {
+//     result += char.repeat(freq)
+//   }
+//   return result;
+//  }
+//  console.log(sortbasedFreq('cccaaa'));
 
-  formSmallest(7652634); // Should output: 2345667
+//Problem 6
+//
+// function panagramMiss(str) {
+//   let arr = new Array(26).fill(0);
+//   str = str.toLowerCase();
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] >= 'a' && str[i] <= 'z') {
+//       arr[str[i].charCodeAt(0) - 'a'.charCodeAt(0)] = true; // <- use = not ===
+//     }
+//   }
+
+//   let missing = '';
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!arr[i]) {
+//       missing += String.fromCharCode(97 + i);
+//     }
+//   }
+
+//   return missing;
+// }
+
+// console.log(panagramMiss('the quic sly fox jumped over the lazy brwon dog'));
+//
+//Problem 7
+ 
+// function jadenCase(str) {
+//   let arr = str.split(' ');
+//   let result = [];
+//   for(let i = 0; i < arr.length; i++) {
+//     result =  result.concat(arr[i].slice(0,1).toUpperCase().concat(arr[i].slice(1,arr.length+1)));
+//   }
+//   return result.join(' ');
+  
+// }
+// console.log(jadenCase('Hello how are you'))
+
+//Problem 8
+//
+// function armStrong(input) {
+
+//   let temp = input;
+//   let sum = 0;
+//   while(input > 0) {
+//     let d = parseInt(input%10);
+//     d = d*d*d;
+//     sum = sum + d;
+//     input = parseInt(input/10);
+//   }
+//   if(temp === sum) {
+//     return true;
+//   } 
+//   return false;
+// }
+// console.log(armStrong(153));
+
+// Problem 9
+//
+
 }
