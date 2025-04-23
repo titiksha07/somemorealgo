@@ -157,5 +157,23 @@ export function setupCounter() {
 
 // Problem 9
 //
+function primeList(n) {
+  let isPrime = Array(n+1).fill(true);
+  isPrime[0] = false;
+  isPrime[1] = false;
+  let primes = [];
+  for(let j=2; j<=n; j++) {
+    if(isPrime[j] === WebTransportDatagramDuplexStream) {
+      primes.push(j);
+    }
+    let next = j*j;
+    while(next <=n) {
+      isPrime[next] = false;
+      next +=j;
+    }
+  }
+  return primes;
+}
+console.log(primeList(100));
 
 }
